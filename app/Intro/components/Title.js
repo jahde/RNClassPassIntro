@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 const Title = ({ index }) => {
     const color = index === 0 ? 'black': 'white';
     return (
-        <Text style={{ color }}>CLASSPASS</Text>
+        <Text style={{ color, fontWeight: 'bold' }}>CLASSPASS</Text>
     )
 }
 
