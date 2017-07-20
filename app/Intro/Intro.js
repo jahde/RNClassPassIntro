@@ -4,10 +4,14 @@ import {
     View,
 } from 'react-native';
 
-const Intro = () => (
-    <View>
-        <Text>Hello from Intro</Text>
-    </View>
-);
+import { StackNavigator } from 'react-navigation';
 
-export default Intro;
+import Slider from './Slider';
+
+const RouteConfig = {
+    Intro: { screen: Slider },
+};
+
+const IntroNav = StackNavigator(RouteConfig);
+
+export default IntroNav;

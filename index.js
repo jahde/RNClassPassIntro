@@ -12,24 +12,27 @@ import {
   View
 } from 'react-native';
 
+import Main from './app/Main/Main';
+import Intro from './app/Intro/Intro';
+
 import { StackNavigator } from 'react-navigation';
 import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class RNClassPassIntro extends Component {
+  state = {
+    loggedIn: false,
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        {
+          !this.state.loggedIn ? (
+              <Intro />
+          ) : (
+              <Main />
+          )
+        }
       </View>
     );
   }
@@ -38,8 +41,6 @@ export default class RNClassPassIntro extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
