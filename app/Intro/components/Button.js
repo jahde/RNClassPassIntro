@@ -9,7 +9,7 @@ import {
 
 const { width } = Dimensions.get('window');
 
-const Button = ({ index }) => {
+const Button = ({ index, onPress }) => {
     let customButtonStyle = { backgroundColor: '#3b39da' };
     if (index !== 0) {
         customButtonStyle = {
@@ -19,7 +19,9 @@ const Button = ({ index }) => {
         }
     }
     return (
-        <TouchableHighlight style={[styles.button, customButtonStyle]}>
+        <TouchableHighlight 
+            onPress={onPress}
+            style={[styles.button, customButtonStyle]}>
             <Text style={styles.buttonText}>START CLASSPASS</Text>
         </TouchableHighlight>
     )

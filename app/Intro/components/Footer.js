@@ -12,9 +12,7 @@ const dots = [0, 1];
 
 import Button from './Button'
 
-const Footer = ({ index, activeIndex }) => {
-    const opacity = index === activeIndex ? 1 : 0.3 ;
-    const dotColor = `rgba(0, 0, 0, ${opacity})`;
+const Footer = ({ activeIndex, onPress }) => {
     return (
         <View style={styles.footerContainer}>
             <View style={styles.dotsContainer}>
@@ -31,11 +29,7 @@ const Footer = ({ index, activeIndex }) => {
 
                 }
             </View>
-            <Button index={activeIndex} />
-            <View>
-            </View>
-            <View>
-            </View>
+            <Button index={activeIndex} onPress={onPress} />
         </View>
     )
 }
@@ -47,6 +41,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around'
     },
     footerContainer: {
+        justifyContent: 'space-around',
         position: 'absolute',
         height: 200,
         bottom: 0,

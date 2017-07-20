@@ -39,7 +39,8 @@ class Slider extends React.Component {
                     <Slide1 index={this.state.index} />
                     <Slide2 />
                 </Carousel>
-                <Footer activeIndex={this.state.index} />
+                <Footer onPress={() => this.props.navigation.navigate('Signup')} 
+                    activeIndex={this.state.index} />
                 <View style={styles.titleStyle}>
                     <Title index={this.state.index} />
                 </View>

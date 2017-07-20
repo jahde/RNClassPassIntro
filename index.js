@@ -15,7 +15,6 @@ import {
 import Main from './app/Main/Main';
 import Intro from './app/Intro/Intro';
 
-import { StackNavigator } from 'react-navigation';
 import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -23,12 +22,19 @@ export default class RNClassPassIntro extends Component {
   state = {
     loggedIn: false,
   }
+  createAccount = () => {
+    console.log('Create account')
+  }
+  subscribe() {
+  }
   render() {
     return (
       <View style={styles.container}>
         {
           !this.state.loggedIn ? (
-              <Intro />
+              <Intro screenProps={{
+                createAccount: this.createAccount
+              }} />
           ) : (
               <Main />
           )
