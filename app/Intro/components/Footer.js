@@ -9,6 +9,9 @@ import {
 
 const { width } = Dimensions.get('window');
 const dots = [0, 1];
+
+import Button from './Button'
+
 const Footer = ({ index, activeIndex }) => {
     const opacity = index === activeIndex ? 1 : 0.3 ;
     const dotColor = `rgba(0, 0, 0, ${opacity})`;
@@ -28,6 +31,7 @@ const Footer = ({ index, activeIndex }) => {
 
                 }
             </View>
+            <Button index={activeIndex} />
             <View>
             </View>
             <View>
